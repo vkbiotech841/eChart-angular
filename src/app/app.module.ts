@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { LinechartComponent } from './linechart/linechart.component';
 import { PiechartComponent } from './piechart/piechart.component';
 import { StackchartComponent } from './stackchart/stackchart.component';
+import { CircleChartComponent } from './circle-chart/circle-chart.component';
+import { BargraphSingleComponent } from './bargraph-single/bargraph-single.component';
+import { BargraphMultipleComponent } from './bargraph-multiple/bargraph-multiple.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LinechartComponent,
     PiechartComponent,
-    StackchartComponent
+    StackchartComponent,
+    CircleChartComponent,
+    BargraphSingleComponent,
+    BargraphMultipleComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,11 @@
-<div id="pipe" style="height: 400px;"></div>
-
-<button (click)="OnElem1Click()" (mouseover)="OnElem1Mouseover()" (mouseout)="OnElem1Mouseout()">
-  elem1
-</button>
-<button (mouseenter)="OnElem2Mouseover()" (mouseleave)="OnElem2Mouseout()">
-  elem2
-</button>
-
-
+<div class="container">
+    <div style="margin-top: 10%;">
+        <button class="btn btn-secondary" [routerLink]="['/linechart']">Line Chart</button>
+        <button class="btn btn-secondary" [routerLink]="['/circlechart']">Cicle Chart</button>
+        <button class="btn btn-secondary" [routerLink]="['/piechart']">Pie Chart</button>
+        <button class="btn btn-secondary" [routerLink]="['/stackchart']">Stack Chart</button>
+        <button class="btn btn-secondary" [routerLink]="['/bargraph-single']">Bar Chart Single</button>
+        <button class="btn btn-secondary" [routerLink]="['/bargraph-multiple']">Bar Chart Multiple</button>
+    </div>
+</div>
 <router-outlet></router-outlet>
