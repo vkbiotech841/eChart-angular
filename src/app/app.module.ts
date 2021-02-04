@@ -9,6 +9,7 @@ import { StackchartComponent } from './stackchart/stackchart.component';
 import { CircleChartComponent } from './circle-chart/circle-chart.component';
 import { BargraphSingleComponent } from './bargraph-single/bargraph-single.component';
 import { BargraphMultipleComponent } from './bargraph-multiple/bargraph-multiple.component';
+import { HorizontalBarGraphComponent } from './horizontal-bar-graph/horizontal-bar-graph.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BargraphMultipleComponent } from './bargraph-multiple/bargraph-multiple
     StackchartComponent,
     CircleChartComponent,
     BargraphSingleComponent,
-    BargraphMultipleComponent
+    BargraphMultipleComponent,
+    HorizontalBarGraphComponent
   ],
   imports: [
     BrowserModule,

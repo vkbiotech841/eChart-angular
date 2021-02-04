@@ -1,3 +1,4 @@
+import { HorizontalBarGraphComponent } from './horizontal-bar-graph/horizontal-bar-graph.component';
 import { BargraphMultipleComponent } from './bargraph-multiple/bargraph-multiple.component';
 import { BargraphSingleComponent } from './bargraph-single/bargraph-single.component';
 import { CircleChartComponent } from './circle-chart/circle-chart.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'circlechart', component: CircleChartComponent },
   { path: 'bargraph-single', component: BargraphSingleComponent },
   { path: 'bargraph-multiple', component: BargraphMultipleComponent },
+  { path: 'horizontal-bargraph', component: HorizontalBarGraphComponent },
 
 ];
 
