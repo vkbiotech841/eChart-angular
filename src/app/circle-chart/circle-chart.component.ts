@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
+import { ECharts } from 'echarts';
 
 @Component({
   selector: 'app-circle-chart',
@@ -7,12 +8,11 @@ import * as echarts from 'echarts';
   styleUrls: ['./circle-chart.component.scss']
 })
 export class CircleChartComponent implements OnInit {
-
+  private myChart!: ECharts;
 
   ngOnInit() {
     this.InitPipe();
   }
-  private myChart: any = null;
 
   private InitPipe(): void {
     this.myChart = echarts.init((document.getElementById('pipe')) as any);
@@ -65,7 +65,7 @@ export class CircleChartComponent implements OnInit {
     this.myChart.setOption(option);
   }
 
-  OnElem1Click() {
+  public OnElem1Click(): void {
     console.log("OnElem1Click");
     this.myChart.dispatchAction({
       type: 'highlight',
@@ -74,7 +74,7 @@ export class CircleChartComponent implements OnInit {
     });
   };
 
-  OnElem1Mouseover() {
+  public OnElem1Mouseover(): void {
     console.log("OnElem1Mouseover");
     this.myChart.dispatchAction({
       type: 'highlight',
@@ -83,7 +83,7 @@ export class CircleChartComponent implements OnInit {
     });
   };
 
-  OnElem1Mouseout() {
+  public OnElem1Mouseout(): void {
     console.log("OnElem1Mouseout");
     this.myChart.dispatchAction({
       type: 'downplay',
@@ -92,7 +92,7 @@ export class CircleChartComponent implements OnInit {
     });
   };
 
-  OnElem2Mouseover() {
+  public OnElem2Mouseover(): void {
     console.log("OnElem2Mouseover");
     this.myChart.dispatchAction({
       type: 'highlight',
@@ -101,7 +101,7 @@ export class CircleChartComponent implements OnInit {
     });
   };
 
-  OnElem2Mouseout() {
+  public OnElem2Mouseout(): void {
     console.log("OnElem2Mouseout");
     this.myChart.dispatchAction({
       type: 'downplay',

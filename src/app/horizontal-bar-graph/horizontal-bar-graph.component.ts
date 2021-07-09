@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
+import { ECharts } from 'echarts';
 
 @Component({
   selector: 'app-horizontal-bar-graph',
@@ -8,15 +9,18 @@ import * as echarts from 'echarts';
 })
 export class HorizontalBarGraphComponent implements OnInit {
 
+  private myChart!: ECharts;
+
   constructor() { }
 
   ngOnInit(): void {
     this.drawAHorizontalBarChart();
   }
 
-  private myChart: any = null;
-  drawAHorizontalBarChart() {
+
+  public drawAHorizontalBarChart(): void {
     this.myChart = echarts.init((document.getElementById('horizontalBarChart')) as any);
+    console.log("horizontal bar", this.myChart);
 
     const option = {
       dataset: {

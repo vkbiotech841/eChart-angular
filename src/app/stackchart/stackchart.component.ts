@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
+import { ECharts } from 'echarts';
 
 @Component({
   selector: 'app-stackchart',
@@ -7,6 +8,8 @@ import * as echarts from 'echarts';
   styleUrls: ['./stackchart.component.scss']
 })
 export class StackchartComponent implements OnInit {
+
+  private stackchart!: ECharts;
 
   // data Structure for Series
   data: any[] = [{
@@ -34,9 +37,8 @@ export class StackchartComponent implements OnInit {
 
   }
 
-
-  drawStackChart() {
-    let stackchart = echarts.init($(this.elm.nativeElement).find('#mGraph_sale')[0]);
+  public drawStackChart(): void {
+    this.stackchart = echarts.init($(this.elm.nativeElement).find('#mGraph_sale')[0]);
 
     this.data.forEach(x => {
       this.series.push({
@@ -51,7 +53,7 @@ export class StackchartComponent implements OnInit {
 
     })
 
-    stackchart.setOption({
+    this.stackchart.setOption({
       tooltip: {
         trigger: 'axis',
         axisPointer: {

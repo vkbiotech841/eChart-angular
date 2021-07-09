@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
+import { ECharts } from 'echarts';
 import * as $ from 'jquery';
 
 @Component({
@@ -8,6 +9,8 @@ import * as $ from 'jquery';
   styleUrls: ['./linechart.component.scss']
 })
 export class LinechartComponent implements OnInit {
+
+  private lineChart!: ECharts;
 
   base = +new Date(1968, 9, 3);
   oneDay = 24 * 3600 * 1000;
@@ -24,8 +27,9 @@ export class LinechartComponent implements OnInit {
   }
 
 
-  drawALineChart() {
-    let lineChart = echarts.init($(this.elm.nativeElement).find('#lineChart')[0]);
+
+  public drawALineChart(): void {
+    this.lineChart = echarts.init($(this.elm.nativeElement).find('#lineChart')[0]);
 
     for (var i = 1; i < 20000; i++) {
       var now = new Date(this.base += this.oneDay);
@@ -33,7 +37,7 @@ export class LinechartComponent implements OnInit {
       this.data.push(Math.round((Math.random() - 0.5) * 20 + this.data[i - 1]));
     }
 
-    lineChart.setOption({
+    this.lineChart.setOption({
       tooltip: {
         trigger: 'axis',
         position: function (pt: any) {

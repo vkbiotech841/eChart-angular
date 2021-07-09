@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
+import { ECharts } from 'echarts';
 
 @Component({
   selector: 'app-bargraph-single',
@@ -8,15 +9,16 @@ import * as echarts from 'echarts';
 })
 export class BargraphSingleComponent implements OnInit {
 
+  private myChart!: ECharts;
+
   constructor() { }
 
   ngOnInit(): void {
     this.drawASingleBarGraph();
   }
 
-  private myChart: any = null;
 
-  drawASingleBarGraph() {
+  public drawASingleBarGraph(): void {
     this.myChart = echarts.init((document.getElementById('barChartSingle')) as any);
 
     const option = {

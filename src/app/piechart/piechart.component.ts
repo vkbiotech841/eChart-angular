@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
+import { ECharts } from 'echarts';
 
 @Component({
   selector: 'app-piechart',
@@ -7,6 +8,8 @@ import * as echarts from 'echarts';
   styleUrls: ['./piechart.component.scss']
 })
 export class PiechartComponent implements OnInit {
+
+  private piechart!: ECharts;
 
   constructor(
     private elm: ElementRef
@@ -16,9 +19,9 @@ export class PiechartComponent implements OnInit {
     this.drawAPieChart();
   }
 
-  drawAPieChart() {
-    let piechart = echarts.init($(this.elm.nativeElement).find('#piechart')[0]);
-    piechart.setOption({
+  public drawAPieChart(): void {
+    this.piechart = echarts.init($(this.elm.nativeElement).find('#piechart')[0]);
+    this.piechart.setOption({
       backgroundColor: '#FFFFFF',
 
       title: {

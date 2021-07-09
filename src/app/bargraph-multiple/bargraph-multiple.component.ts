@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
+import { ECharts } from 'echarts';
 
 @Component({
   selector: 'app-bargraph-multiple',
@@ -8,15 +9,15 @@ import * as echarts from 'echarts';
 })
 export class BargraphMultipleComponent implements OnInit {
 
+  private myChart!: ECharts;
+
   constructor() { }
 
   ngOnInit(): void {
     this.drawAMultipleBargraph();
   }
 
-  private myChart: any = null;
-
-  drawAMultipleBargraph() {
+  public drawAMultipleBargraph(): void {
     this.myChart = echarts.init((document.getElementById('barChartMultiple')) as any);
 
     const option = {
